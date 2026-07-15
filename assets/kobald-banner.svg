@@ -16,8 +16,8 @@
   </g>
   <!-- Title text -->
   <text x="200" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#e0fbfc">Kobald</text>
-  <text x="200" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#a0b8c5">Evidence-focused AI and smart-systems project</text>
-  <text x="200" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b8a99">evidence before authority &#183; local-first &#183; human-reviewed</text>
+  <text x="200" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#a0b8c5">Evidence focused AI and smart systems project</text>
+  <text x="200" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b8a99">evidence before authority &#183; local operation &#183; human review</text>
   <!-- Accent line -->
   <rect x="200" y="106" width="340" height="2" rx="1" fill="#2ec4b1" opacity="0.6"/>
 </svg>
