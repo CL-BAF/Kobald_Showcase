@@ -5,6 +5,8 @@
 
 # Kobald
 
+A student led project focused on transparent evidence, accountable decisions and controlled local development.
+
 Kobald is a student led, locally operated AI and smart systems project based in Mount Gambier, South Australia. It gathers and compares evidence, identifies contradictions, preserves where information came from, communicates uncertainty, and keeps important decisions and external actions under human control.
 
 **Governing principle: evidence before authority.**
