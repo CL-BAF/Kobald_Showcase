@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/kobald-banner.svg" alt="Kobald - evidence-focused AI and smart systems project" width="760" />
+  <img src="assets/kobald-banner.svg" alt="Kobald, evidence focused AI and smart systems project" width="760" />
 </p>
 
 
@@ -29,12 +29,12 @@ Kobald is an early working software foundation, not a finished product or deploy
 * Evidence provenance and transparent quality signals
 * Separate preservation of evidence for and against a conclusion
 * Explicit contradictions, uncertainty and bounded confidence
-* Human-readable evidence briefs
+* Human readable evidence briefs
 * Persistent human review queue
 * Approve, reject or request more evidence decisions
 * Links between research sessions evidence linking and confidence tracking
 * Nine deterministic offline evaluation cases
-* Complete deterministic offline demonstration using invented public-safe data
+* Complete deterministic offline demonstration using invented safe public data
 * Structured audit records and secret redaction
 
 ## Evidence Flow
@@ -57,10 +57,10 @@ Question or material
 * No arbitrary file editing outside controlled Kobald records
 * No live device control
 * No automatic messages, purchases, Git pushes or other external actions
-* No model training or fine-tuning
+* No model training or fine tuning
 * New evidence begins unreviewed and is not automatically treated as truth
 * Demonstrations use invented data and run offline
-* High-impact decisions remain subject to human review
+* High impact decisions remain subject to human review
 
 ## Current vs Future
 
@@ -96,6 +96,6 @@ These are possible future directions, not claims of present deployment:
 
 ## Project Direction
 
-The next stage is a controlled local prototype using suitable computing hardware, reliable storage, power protection, an isolated sensor network and a small number of read-only environmental sensors. Real world capability will be introduced gradually, tested separately and kept behind explicit human approval.
+The next stage is a controlled local prototype using suitable computing hardware, reliable storage, power protection, an isolated sensor network and a small number of read only environmental sensors. Real world capability will be introduced gradually, tested separately and kept behind explicit human approval.
 
 The complete technical source, test suite and developer documentation are maintained separately and can be made available to appropriate reviewers on request.
