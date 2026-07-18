@@ -21,8 +21,10 @@ Most AI systems ask people to trust an answer. Kobald asks them to inspect the e
 
 Kobald is an early working software foundation, not a finished product or deployed industry system. Its evidence workflow and human review controls are implemented and covered by an offline automated test suite.
 
-**Current documented build:** v0.8.1  
-**Test status:** 295 passing, 1 skipped optional live smoke test  
+**Tagged release baseline:** v0.8.0 with 295 tests passing and 1 skipped  
+**Latest development candidate:** v0.9.0 release candidate at commit `84ad876`  
+**Candidate test status:** 604 passing, 1 skipped opt-in live smoke test  
+**Release status:** pushed to private `main`; not tagged and no remote CI result has been verified  
 **Runtime:** Python standard library; offline demonstrations require no cloud service
 
 ## What Works Now
@@ -34,10 +36,22 @@ Kobald is an early working software foundation, not a finished product or deploy
 * Human readable evidence briefs
 * Persistent human review queue
 * Approve, reject or request more evidence decisions
-* Links between research sessions evidence linking and confidence tracking
+* Links between research sessions and confidence tracking
 * Nine deterministic offline evaluation cases
 * Complete deterministic offline demonstration using invented safe public data
 * Structured audit records and secret redaction
+
+## v0.9 Release Candidate Additions
+
+The latest development candidate adds a bounded provider layer for deterministic mock responses, local Ollama and consent-gated cloud models. These additions are implemented and covered by the offline test suite, but have not yet been demonstrated through a successful live Ollama request.
+
+* Persistent cloud permission plus confirmation for each invocation
+* Loopback-only local provider URLs and trusted-host cloud validation
+* Redirect and environment proxy blocking for provider requests
+* Strict source-linked response validation that rejects fabricated references
+* Metadata-only live audit records without raw prompts or responses
+* A read-only AI connectivity check that sends no evidence
+* An invented-evidence live demonstration that never approves its own result
 
 ## Evidence Flow
 
@@ -63,6 +77,8 @@ Question or material
 * New evidence begins unreviewed and is not automatically treated as truth
 * Demonstrations use invented data and run offline
 * High impact decisions remain subject to human review
+* Evidence is not sent to a cloud provider without persistent permission and confirmation for that invocation
+* All conclusions from live providers remain provisional and require human review
 
 ## Current vs Future
 
@@ -73,7 +89,7 @@ Question or material
 | Confidence calibration without model training | Small business knowledge systems |
 | Offline evaluation harness | Trades and maintenance documentation |
 | Controlled local ingestion | Logistics and operational analysis |
-| Links between research sessions evidence linking | Cybersecurity evidence triage |
+| Cross-session evidence linking | Cybersecurity evidence triage |
 | Human review queue | Controlled sensor integration |
 | Deterministic offline demonstration | Semantic similarity retrieval |
 
@@ -84,6 +100,8 @@ Future possibilities are not current deployments.
 Kobald includes a repeatable offline demonstration covering controlled ingestion, duplicate and unsafe path rejection, evidence analysis, provisional confidence, human review, a second evidence session, links between research sessions comparison, evaluation and preserved audit history.
 
 The demonstration uses invented solar panel material, mock AI responses and no live hardware or network access. It demonstrates the workflow and safety boundaries; it does not prove that every conclusion is true or that Kobald is ready for production.
+
+The v0.9 provider layer has been tested offline with mock providers. No successful live Ollama request has yet been demonstrated.
 
 ## Potential Local Applications
 
