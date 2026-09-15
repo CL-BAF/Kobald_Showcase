@@ -35,6 +35,19 @@ The private suite covers behaviour including:
 
 Exact internal test names, fixtures and source code are intentionally not mirrored into this public repository.
 
+## Public evaluation examples
+
+To make the documented behaviour easier to inspect without exposing the private test suite, the showcase now includes public representative material:
+
+- [Public offline evaluation cases](../examples/offline_eval_cases.json)
+- [Public demonstration transcript](../examples/demo_transcript.md)
+
+These are sanitised examples built around the behaviours described in this repository. They are **not** a verbatim export of the private automated test fixtures and should not be treated as independent proof that every expected behaviour is production ready.
+
+The evaluation cases show the expected handling of situations such as conflicting evidence, insufficient evidence, source provenance, fabricated source references, duplicate material, invalid local paths, cloud consent, human review boundaries and later evidence changing an earlier conclusion.
+
+The demonstration transcript uses entirely invented solar-installation material to show the evidence and review workflow in a form that can be read without running the private codebase.
+
 ## Verification approach
 
 Kobald uses several different forms of verification rather than relying on one number.
