@@ -16,6 +16,27 @@ Modern AI can answer complicated questions in seconds, but that convenience also
 
 > **This repository is the public showcase, not the complete Kobald source repository.** The main implementation, private automated test suite, internal developer documentation and infrastructure configuration are maintained separately.
 
+## Contents
+
+| Section | What it covers |
+|---|---|
+| [What Kobald actually is](#what-kobald-actually-is) | The basic idea and how Kobald sits around interchangeable AI models |
+| [Why Kobald exists](#why-kobald-exists) | The trust and reproducibility problem the project is trying to address |
+| [What can Kobald do right now?](#what-can-kobald-do-right-now) | Features that currently exist |
+| [What Kobald cannot do yet](#what-kobald-cannot-do-yet) | Current limitations and unfinished systems |
+| [Kobald vs Ollama or llama.cpp](#kobald-vs-ollama-or-llamacpp) | Why Kobald is different from simply running a local model |
+| [What Kobald is being built toward](#what-kobald-is-being-built-toward) | The intended research workflow and longer-term system |
+| [Privacy and local operation](#privacy-and-local-operation) | Why local AI and user-controlled data matter |
+| [Open source and customisation](#open-source-and-customisation) | How different Kobald installations could be adapted |
+| [Evidence before authority](#evidence-before-authority) | The main design principle behind the project |
+| [Desktop Interface](#desktop-interface) | Current Command Centre screenshots |
+| [Technical documentation](#technical-documentation) | Architecture, testing, history and evaluation documents |
+| [Why more compute matters](#why-more-compute-matters) | What additional local hardware would enable |
+| [Project direction](#project-direction) | Planned development areas |
+| [Project status](#project-status) | Current POC and research status |
+| [Summary](#summary) | Trust, privacy and control in short form |
+| [Support and technical review](#support-and-technical-review) | Hardware, mentorship and review information |
+
 ## What Kobald actually is
 
 Kobald is not a new foundation model and it is not trying to replace models such as Qwen, Llama or other local and cloud models.
