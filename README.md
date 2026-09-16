@@ -1,97 +1,203 @@
 <p align="center">
-  <img src="assets/kobald-banner.svg" alt="Kobald, evidence focused AI and smart systems project" width="760" />
+  <img src="assets/kobald-banner.svg" alt="Kobald, private AI and smart systems research project" width="760" />
 </p>
 
 # Kobald
 
-A student led project focused on transparent evidence, accountable decisions and controlled local AI development.
+**Kobald is an open-source private AI system designed to sit above interchangeable AI models and give the user control over the knowledge, tools, data and hardware around them.**
 
-Kobald is an independently developed local AI and smart systems project based in Mount Gambier, South Australia. It is being developed by a 16 year old student developer and is focused on gathering and comparing evidence, identifying contradictions, preserving where information came from, communicating uncertainty, and keeping important decisions and external actions under human control.
+The project is built around a larger question: **how much should we trust an AI answer when we cannot properly verify how it reached it?**
 
-**Governing principle: evidence before authority.**
+Modern AI can answer complicated questions in seconds, but that convenience also makes it easy to accept an answer without checking the information behind it. Kobald is an experiment in keeping the usefulness of AI while making the process around its answers more inspectable, reproducible and controlled by the user.
 
-Kobald is intended to assess claims using available evidence rather than social status, popularity or authority. It does not claim to be completely unbiased. Evidence, models, sensors, questions and human rules may all contain bias; Kobald is designed to make those limitations, contradictions and decisions more visible and auditable.
+**Kobald is still an early research project. Many of the systems described in this repository are development goals rather than finished features.**
 
-> **This repository is the public showcase, not the complete Kobald source repository.** The implementation, private automated test suite, internal developer documentation and infrastructure configuration are maintained separately. Appropriate technical reviewers can be given additional evidence privately where required.
+> **Governing principle: evidence before authority.**
 
-## Technical overview
+> **This repository is the public showcase, not the complete Kobald source repository.** The main implementation, private automated test suite, internal developer documentation and infrastructure configuration are maintained separately.
 
-For reviewers who want more than the project summary:
+## What Kobald actually is
 
-- [Public architecture overview](docs/ARCHITECTURE.md)
-- [Testing and verification](docs/TESTING.md)
-- [NVIDIA DGX Spark development plan](docs/DGX-SPARK-PLAN.md)
-- [Public project history](docs/PROJECT-HISTORY.md)
+Kobald is not a new foundation model and it is not trying to replace models such as Qwen, Llama or other local and cloud models.
 
-## The Problem
+The model is intended to be interchangeable. Kobald is the system around it.
 
-Most AI systems ask people to trust an answer. Kobald asks them to inspect the evidence behind it, see where information conflicts, and keep consequential decisions reviewable by a person.
+That surrounding system is being developed to include things such as:
 
-## Current Project Stage
+- a private knowledge vault
+- research and evidence handling
+- tools and external programs
+- scientific simulations
+- persistent memory
+- agents and workers
+- cybersecurity and privacy tooling
+- sensors and other connected systems
+- automation
+- optional robotics and physical hardware
 
-Kobald is an early working software foundation, not a finished product or deployed industry system. Its evidence workflow and human review controls are implemented and covered by an offline automated test suite.
+At its base, Kobald is intended to operate as a research assistant. Because the project is open source, different installations could be adapted for completely different jobs.
 
-| Item | Current public status |
-|---|---|
-| Tagged release baseline | v0.8.0 |
-| v0.8.0 test status | 295 passing, 1 skipped |
-| Latest documented development candidate | v0.9.0 release candidate at commit `84ad876` |
-| Candidate test status | 604 passing, 1 skipped opt in live smoke test |
-| Candidate release status | Private `main`, not tagged; no remote CI result claimed here |
-| Runtime | Python standard library for the documented offline foundation |
-| Public source status | Showcase only; full implementation remains private |
+A scientific setup could connect simulation software and datasets. A business could connect private documents. A home system could connect environmental sensors. A cybersecurity setup could provide authorised security tools and network information. A robotics project could expose sensors and physical movement to the same system.
 
-The test count is not presented as proof of production readiness. It is evidence that the development foundation is exercised systematically rather than being demonstrated only through hand picked examples.
+The AI model is only one part of Kobald.
 
-## What Works Now
+## Why Kobald exists
 
-- Controlled ingestion from allowlisted local sources
-- Evidence provenance and transparent quality signals
-- Separate preservation of evidence for and against a conclusion
-- Explicit contradictions, uncertainty and bounded confidence
-- Human readable evidence briefs
-- Persistent human review queue
-- Approve, reject or request more evidence decisions
-- Links between research sessions and confidence tracking
-- Nine deterministic offline evaluation cases
-- Complete deterministic offline demonstration using invented safe public data
-- Structured audit records and secret redaction
-- Early desktop Command Centre with conversation, model, settings and diagnostics views
+Before generative AI became common, answering a difficult question often meant researching the topic, comparing sources and working through the problem yourself.
 
-## v0.9 Release Candidate Additions
+AI has made getting an answer dramatically easier, but it has also made it easier to skip that process entirely and simply trust whatever the model returns.
 
-The latest documented development candidate adds a bounded provider layer for deterministic mock responses, local Ollama and consent gated cloud models. These additions are covered by the offline test suite.
+Kobald is being developed around the idea that the model itself should not automatically be treated as the authority.
 
-- Persistent cloud permission plus confirmation for each invocation
-- Loopback only local provider URLs and trusted host cloud validation
-- Redirect and environment proxy blocking for provider requests
-- Strict source linked response validation that rejects fabricated references
-- Metadata only live audit records without raw prompts or responses
-- Read only AI connectivity checking that sends no evidence
-- Invented evidence live demonstration that never approves its own result
+The long-term goal is for important results to be supported by an inspectable process that records things such as:
 
-The current public documentation does not claim a successful live Ollama request for this specific v0.9 release candidate unless that result is separately verified and published.
+- what information was available
+- where that information came from
+- what tools or programs were used
+- what those tools returned
+- where sources disagreed
+- what information was missing or uncertain
+- what actions were taken
 
-## Evidence Flow
+This does **not** mean exposing or reproducing a language model's hidden internal reasoning. Kobald instead aims to make the **process around the model** inspectable and reproducible.
+
+## What can Kobald do right now?
+
+Kobald is not currently a finished assistant or production system.
+
+The current working foundation includes:
+
+### Knowledge Vault
+
+Kobald has a developing knowledge vault that can store information and make it available to the connected AI model.
+
+The knowledge system is still basic and is not yet advanced enough for the full research workflow planned for the project.
+
+### AI interaction
+
+Kobald can communicate with connected AI models through its interface and answer questions based on the information available to it.
+
+The quality and capabilities of those answers currently depend heavily on the connected model. At this stage, Kobald also still depends heavily on cloud-hosted AI for more capable interactions.
+
+### Command Centre GUI
+
+An early desktop Command Centre exists for interacting with Kobald, selecting models, configuring parts of the system and viewing runtime information.
+
+### Basic cybersecurity tooling
+
+Kobald includes an early HackerOne-oriented scanning tool for basic, user-authorised security scanning. It is experimental and is not a complete cybersecurity platform.
+
+### Development and testing foundation
+
+The project also has an automated testing and evaluation foundation used to verify internal behaviour as Kobald is developed. Test counts are documented separately and are not presented as proof that the complete Kobald vision already exists.
+
+## What Kobald cannot do yet
+
+A large part of the planned system is still unfinished.
+
+Kobald does not currently provide the complete research, evidence, scientific, automation, sensor, robotics or agent system described by the long-term project direction.
+
+In particular:
+
+- the knowledge vault is still limited
+- the full research workflow is incomplete
+- advanced evidence handling is still being developed
+- most scientific tools and simulations are not integrated
+- advanced agents and workers are not complete
+- sensor integration is not a finished system
+- robotics integration remains experimental and future-facing
+- advanced automation is not complete
+- cybersecurity tooling is still basic
+- local AI is not yet the default for every workload
+- capable operation still depends heavily on cloud-hosted models
+
+At this stage, there is not yet a strong reason for most people to use Kobald instead of running a model directly through something such as Ollama or llama.cpp. Building the systems that make that distinction worthwhile is the current development work.
+
+## Kobald vs Ollama or llama.cpp
+
+Ollama and llama.cpp solve the problem of **running a model**.
+
+Kobald is intended to solve a different problem: **what do you build around that model once it is running?**
+
+The long-term value of Kobald is intended to come from combining an interchangeable model with private knowledge, tools, memory, evidence records, simulations, agents, sensors and physical systems while keeping those systems under the user's control.
+
+Kobald may use Ollama, llama.cpp or other model runtimes underneath it. They are not competitors to the project; they can be part of the stack.
+
+## What Kobald is being built toward
+
+A more complete Kobald research workflow could eventually look like this:
 
 ```text
-Question or material
-    → controlled ingestion
-    → evidence retrieval with provenance
-    → evidence for and against kept separately
-    → contradiction and uncertainty analysis
-    → provisional conclusion
-    → human review
-    → approved knowledge or no action
+User asks a question
+    -> Kobald searches available knowledge
+    -> relevant tools or programs are selected
+    -> tools are run and their outputs are recorded
+    -> relevant sources and evidence are collected
+    -> conflicting or missing information is identified
+    -> a result is produced
+    -> the user can inspect the information and process behind it
+    -> the user decides what to do next
 ```
 
-A more complete system level view is available in the [architecture overview](docs/ARCHITECTURE.md).
+For scientific work, those tools could eventually include programs covering areas such as:
+
+- physics
+- chemistry
+- biology
+- geology
+- mathematics
+- data analysis
+
+Other installations could connect completely different tools.
+
+## Privacy and local operation
+
+Privacy is a major part of the project because many useful AI workloads involve information that users may not want to send to an external provider.
+
+Examples include:
+
+- financial information
+- private documents
+- sensor data
+- research and test data
+- cybersecurity information
+- internal business information
+- personal information
+
+The long-term goal is for users to be able to run Kobald using hardware, models and storage they control.
+
+Cloud models may still be supported when the user chooses to use them, but Kobald is not intended to permanently depend on one provider or require that sensitive information leave the user's system.
+
+## Open source and customisation
+
+There is no single required Kobald use case.
+
+Someone could use it only as a research assistant. Another person could connect sensors. Another could add cybersecurity tools. A scientific user could add specialised simulations. A robotics project such as **Kolbot** could eventually give Kobald access to physical sensors and mobility.
+
+The goal is to provide a common AI layer around those capabilities while leaving control with the person running the system.
+
+## Evidence before authority
+
+A central principle of Kobald is:
+
+> **Evidence before authority.**
+
+An answer should not be considered correct simply because an AI model produced it.
+
+As Kobald develops, the goal is to increasingly separate:
+
+- what the model claims
+- what evidence supports the claim
+- what evidence contradicts it
+- what tools produced measurable results
+- what remains uncertain
+- what still requires human judgement
+
+Kobald is intended to assist the user, not remove the user from the decision-making process.
 
 ## Desktop Interface
 
-Kobald has an early desktop Command Centre under active development. The interface is intended to provide one place to view system state, interact with Kobald, select models, configure local audio devices and inspect diagnostics.
-
-The screenshots below are development builds. They show the interface as it exists now rather than a finished product.
+Kobald has an early desktop Command Centre under active development.
 
 ### Command Centre
 
@@ -99,7 +205,7 @@ The screenshots below are development builds. They show the interface as it exis
   <img src="assets/kobald-command-centre.webp" alt="Kobald Command Centre development interface" width="900" />
 </p>
 
-The current desktop interface exposes local system information, conversation controls, model selection areas, permissions and runtime status. The captured build shown here was disconnected from the Kobald server at the time of the screenshot.
+The interface is intended to provide one place to interact with Kobald, select models, view system state and access configuration and diagnostics.
 
 ### Settings
 
@@ -107,117 +213,95 @@ The current desktop interface exposes local system information, conversation con
   <img src="assets/kobald-settings.webp" alt="Kobald Command Centre settings window with server address redacted" width="475" />
 </p>
 
-The settings view provides server configuration, local speech output, microphone selection, audio output selection and background tray behaviour. The server address is redacted from the public screenshot.
-
 ### Diagnostics
 
 <p align="center">
   <img src="assets/kobald-diagnostics.webp" alt="Kobald Desktop diagnostics development view" width="768" />
 </p>
 
-The diagnostics view is still under development and is intended to expose runtime and connection information in a dedicated view.
+These screenshots show development builds rather than a finished product.
 
-## Human Review and Safety
+## Technical documentation
 
-The documented foundation intentionally keeps a number of boundaries in place:
+For people who want the technical details:
 
-- No autonomous approval
-- No unrestricted shell access in the documented release candidate
-- No arbitrary file editing outside controlled Kobald records in the documented release candidate
-- No live device control represented here as a finished capability
-- No automatic messages, purchases, Git pushes or other external actions represented here as approved autonomous behaviour
-- No model training or fine tuning claimed as a current capability
-- New evidence begins unreviewed and is not automatically treated as truth
-- Demonstrations use invented data where possible
-- High impact decisions remain subject to human review
-- Evidence is not sent to a cloud provider without the documented permission and confirmation controls
-- Conclusions from live providers remain provisional until reviewed
+- [Public architecture overview](docs/ARCHITECTURE.md)
+- [Testing and verification](docs/TESTING.md)
+- [NVIDIA DGX Spark development plan](docs/DGX-SPARK-PLAN.md)
+- [Public project history](docs/PROJECT-HISTORY.md)
+- [Public offline evaluation examples](examples/README.md)
 
-These boundaries describe the documented public development state. Future controlled tool and computer interaction is a development direction, not something this showcase presents as already production ready.
+The technical documentation is intentionally separated from the main explanation so that understanding the purpose of Kobald does not require understanding its implementation first.
 
-## Current vs Future
+## Why more compute matters
 
-| Implemented foundation | Potential future application or development |
-|---|---|
-| Evidence provenance and quality signals | Agriculture and environmental monitoring |
-| Evidence briefs for human review | Education and research assistance |
-| Confidence calibration without model training | Small business knowledge systems |
-| Offline evaluation harness | Trades and maintenance documentation |
-| Controlled local ingestion | Logistics and operational analysis |
-| Cross session evidence linking | Cybersecurity evidence triage |
-| Human review queue | Controlled sensor integration |
-| Deterministic offline demonstration | Semantic similarity retrieval |
-| Early desktop Command Centre | Broader local system and model orchestration |
-| Bounded model provider layer | Larger local models and multimodal testing |
+Kobald is currently developed on limited hardware, while the project is specifically investigating increasingly capable local and private AI systems.
 
-Future possibilities are not current deployments.
+More capable local compute would allow the project to:
 
-## Why More Compute Matters
+- run larger models locally instead of depending as heavily on cloud services
+- compare models under the same controlled environment
+- test multiple AI workers and concurrent workloads
+- run longer research and evaluation workflows
+- experiment with larger knowledge and memory systems
+- test future multimodal workloads involving vision, audio and sensor data
+- keep more sensitive project data on local infrastructure
+- explore later model adaptation and training experiments
 
-The current Kobald foundation can be developed and tested on comparatively modest hardware, but the next stages of the project are intended to move more AI work onto local systems.
+The development machine does not represent the intended minimum hardware for every future Kobald installation. It is research infrastructure used to test workloads, find bottlenecks and determine what can later be reduced or optimised.
 
-More capable local compute would make it practical to:
+## Project direction
 
-- run substantially larger models locally rather than depending as heavily on cloud services
-- compare multiple models and configurations under the same controlled workflow
-- experiment with model adaptation and fine tuning in later development stages
-- support future multimodal work involving vision, audio and sensor data
-- test longer running research and agent workflows locally
-- preserve more sensitive development and project data on local infrastructure
-- produce repeatable local benchmarks across models and Kobald versions
-- explore distributed AI workloads as the project matures
+Kobald is being developed incrementally rather than treating the long-term design as if it already exists.
 
-These are development goals, not claims of functionality already implemented in Kobald.
+Major areas of future work include:
 
-### Why NVIDIA DGX Spark is relevant
+- improving the knowledge vault
+- improving research and evidence handling
+- reproducible tool execution
+- stronger local model support
+- reducing cloud dependency
+- agents and workers
+- scientific tool and simulation integration
+- cybersecurity and privacy tooling
+- sensors and connected systems
+- automation
+- persistent memory
+- robotics experiments
+- better user interfaces
+- continued testing and evaluation
 
-NVIDIA DGX Spark is particularly relevant because its high memory local AI design provides a substantially larger development ceiling than the project's current hardware. It creates room for larger local models, demanding agent experiments, multimodal work and later model adaptation without requiring enterprise scale infrastructure.
+Features that do not work will be changed or removed rather than kept simply because they appeared in an earlier plan.
 
-The intended use is documented separately in the [DGX Spark development plan](docs/DGX-SPARK-PLAN.md), including proposed phases and public evidence that could be produced from the work.
+## Project status
 
-## Demonstration and Verification
+**Status: early research and development / proof of concept**
 
-Kobald includes a repeatable offline demonstration covering controlled ingestion, duplicate and unsafe path rejection, evidence analysis, provisional confidence, human review, a second evidence session, links between research sessions, evaluation and preserved audit history.
+Kobald is currently being developed as a student project and is intended to continue afterwards as an independent personal research project.
 
-The demonstration uses invented solar panel material, mock AI responses and no live hardware or network access. It demonstrates workflow and safety boundaries; it does not prove that every conclusion is true or that Kobald is ready for production.
+It is developed independently by **Cameron Lonnie**, a 16-year-old student in Mount Gambier, South Australia.
 
-The testing approach and limits of the public claims are described in [Testing and Verification](docs/TESTING.md).
+The purpose of this repository is to make the project understandable, document its development honestly, provide public evidence where appropriate and eventually give other people an open system they can inspect, modify and build on.
 
-## Potential Local Applications
+## Summary
 
-These are possible future directions, not claims of present deployment:
+Kobald is focused on three main ideas:
 
-- **Agriculture:** comparing sensor readings, weather and historical observations before suggesting the next inspection
-- **Education:** helping students examine supporting and opposing evidence
-- **Small business:** preserving procedures, decisions and project handovers
-- **Trades and maintenance:** recording service evidence, outcomes and lessons
-- **Logistics:** comparing operational records and identifying contradictions
-- **Cybersecurity:** organising evidence from multiple alerts while leaving action with a person
+**Trust**  
+AI results should become easier to inspect and verify rather than being accepted only because a model produced them.
 
-## Project Direction
+**Privacy**  
+Users should be able to work with sensitive information without automatically giving it to an external AI provider.
 
-The next stage is a controlled local prototype using suitable computing hardware, reliable storage, power protection, an isolated sensor network and a small number of read only environmental sensors. Real world capability will be introduced gradually, tested separately and kept behind explicit human approval.
+**Control**  
+The person running the system should decide what models, tools, data, sensors and hardware their AI can use.
 
-Kobald's development direction also includes broader local model orchestration, multimodal work, controlled tool use and computer interaction. These areas will only be represented as current capability when they have actually been implemented and verified.
+Kobald is still early. The goal is not to pretend these problems have already been solved. The goal is to build the system, test the ideas properly and find out how much of that vision can actually work.
 
-## Private Technical Review
+## Support and technical review
 
-The complete Kobald source code, automated test suite and internal developer documentation are maintained separately from this showcase.
+Hardware support, technical mentorship and project review can directly help expand Kobald's local AI development and testing.
 
-For a legitimate technical or sponsorship review, additional evidence can be made available selectively, such as:
+For legitimate technical or sponsorship review, additional implementation evidence can be made available selectively where appropriate.
 
-- current test run output
-- selected test categories and verification notes
-- architecture and security explanations
-- selected implementation excerpts relevant to a review question
-- live or recorded demonstrations
-
-This allows technical claims to be reviewed without publishing the entire private codebase.
-
-## Support and Sponsorship
-
-Kobald is developed independently by Cameron Lonnie in Mount Gambier, South Australia.
-
-Hardware support, technical mentorship and project review can directly help expand local AI development, testing and future smart systems work. Any donated or sponsored hardware would be used as development infrastructure for Kobald rather than represented as evidence that unfinished capabilities already exist.
-
-For project enquiries or technical review, contact can be made through the GitHub profile associated with this repository.
+For project enquiries, contact can be made through the GitHub profile associated with this repository.
