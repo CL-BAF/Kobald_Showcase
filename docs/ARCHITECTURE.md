@@ -1,74 +1,66 @@
-# Kobald Public Architecture Overview
+# Kobald — Public Scientific Architecture
 
-This document describes Kobald at a system level without publishing the private implementation, internal source layout, credentials, infrastructure addresses or security sensitive configuration.
+This is a high-level, **proposed** architecture for Kobald's direction as an AI harness for scientific computing and research. It is not a diagram of an already integrated science platform. The public showcase omits private implementation and infrastructure details.
 
-The purpose of this document is to show how the major parts of Kobald fit together and where human review, model access and evidence handling sit in the system.
+## Target system view
 
-## System view
+~~~text
+Researcher / scientific operator
+          |
+          v
+Experiment workspace / research control plane
+          |
+          v
+AI planning and tool-selection layer
+          |
+          v
+Scientific job manifest (inputs, units, assumptions, versions)
+          |
+          v
+Policy and authorisation / human review
+          |
+          +----------------------+---------------------+
+          |                      |                     |
+          v                      v                     v
+Simulation adapters      Analysis / dataset tools   Read-only instrument adapter
+          |                      |                 (future, supervised)
+          +----------------------+---------------------+
+                                 |
+                                 v
+                  Recorded results and execution trace
+                                 |
+                                 v
+                 Provenance / uncertainty / verification
+                                 |
+                                 v
+                   Researcher review and next action
+~~~
 
-```mermaid
-flowchart LR
-    U[User] --> UI[Command Centre / client]
-    UI --> CORE[Kobald runtime]
+The model does not replace the physics engine, numerical solver, laboratory instrument or scientific verification process. It coordinates tools and suggests interpretations, subject to permissions and review.
 
-    CORE --> INGEST[Controlled ingestion]
-    INGEST --> STORE[Evidence records and provenance]
-    STORE --> ANALYSE[Evidence comparison and contradiction analysis]
-    ANALYSE --> RESULT[Provisional conclusion and confidence]
-    RESULT --> REVIEW[Human review queue]
+## Scope and maturity
 
-    REVIEW -->|Approve| KNOW[Approved project knowledge]
-    REVIEW -->|Reject / request more evidence| CORE
-
-    CORE --> LOCAL[Local model providers]
-    CORE --> CLOUD[Consent gated cloud model providers]
-    CORE --> AUDIT[Audit and diagnostic records]
-
-    SOURCES[Allowlisted local sources] --> INGEST
-```
-
-## Main boundaries
-
-### Command Centre
-
-The desktop interface is the main human facing control surface. It is intended to provide conversation controls, model selection, local device settings, runtime status and diagnostics without requiring a user to work directly in the underlying runtime.
-
-### Kobald runtime
-
-The runtime coordinates research sessions, evidence handling, model access, review state and audit information. The public showcase intentionally does not publish internal route names, private source structure or implementation details.
-
-### Evidence pipeline
-
-Kobald is designed around preserving where information came from and separating evidence that supports a conclusion from evidence that challenges it. Contradictions and uncertainty are treated as information that should remain visible rather than being silently flattened into a single answer.
-
-### Human review
-
-Important conclusions remain provisional until a person reviews them. New information is not automatically promoted into trusted project knowledge, and external actions are not treated as approved merely because a model suggested them.
-
-### Model providers
-
-Kobald supports a bounded provider layer for deterministic mock responses, local model providers and consent gated cloud providers. Cloud use is designed to remain explicit rather than silently sending evidence outside the local environment.
-
-### Audit and diagnostics
-
-Audit and diagnostic records are intended to make important system activity inspectable while avoiding unnecessary storage of sensitive raw prompts or credentials.
-
-## Current and future boundaries
-
-| Area | Current public status | Future direction |
+| Component | Status | Notes |
 |---|---|---|
-| Evidence provenance | Implemented foundation | Broader source types and richer retrieval |
-| Contradiction handling | Implemented foundation | Larger cross session comparisons |
-| Human review | Implemented foundation | More granular permissions and action review |
-| Local model access | Provider layer implemented | Larger local models and broader multimodal testing |
-| Cloud model access | Consent gated provider layer | Additional providers while preserving explicit consent |
-| Desktop interface | Early development build | More complete system control and diagnostics |
-| Sensors | Not a current deployment | Controlled read only sensor integration |
-| Computer control | Not represented here as a finished capability | Future controlled tool and system interaction |
-| Distributed AI | Not a current capability | Possible multi system experimentation later |
+| Evidence/provenance and review | Implemented in legacy prototype foundations | Migration/revalidation into canonical KobaldAi pending |
+| Local/cloud provider integration | Prototype foundation | Not science-specific |
+| Desktop Command Centre | Early development interface | Original conversation-oriented UI may change |
+| Scientific job manifest and runner | Planned | Must capture data, parameters, units, tool versions, seeds and outputs |
+| Physics-engine or numerical solver integration | Planned | Start with deterministic, independently checked examples |
+| Chemical analysis connector | Planned | Begin with offline datasets, not live equipment |
+| Instrumentation and sensors | Planned | Synthetic and read-only first; requires device-specific safety review |
+| Autonomous physical experiments | Not implemented / not baseline scope | Any future consideration requires qualified oversight, approvals and safety controls |
 
-## What is intentionally not public
+## Authority and boundaries
 
-The showcase repository does not contain the complete Kobald source tree, private test suite, infrastructure configuration, credentials, internal deployment information or security sensitive implementation details.
+AI-generated text, plans, retrieved sources, dataset contents and tool results are untrusted inputs. Each proposed tool action must be validated against typed interfaces and explicit capability grants.
 
-Those materials are maintained separately. Appropriate technical reviewers can be given additional evidence privately when there is a legitimate review need.
+Scientific results must retain their original source, measurement or simulation context. Models may make provisional interpretations but cannot silently rewrite instrument outputs or promote them into independently validated findings.
+
+Physical-device operation requires safeguards outside the model. No general-purpose model instruction grants authority to change hardware state, run hazardous procedures or bypass interlocks.
+
+## Relationship to Domovoi
+
+Kobald's scientific harness is independent of the Domovoi efficiency research initiative. Future Domovoi models may be evaluated on reproducible scientific tasks in Kobald, but no Domovoi model is currently demonstrated or validated.
+
+For technical development status, refer to the [canonical KobaldAi repository](https://github.com/CL-BAF/KobaldAi).
