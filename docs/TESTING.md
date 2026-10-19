@@ -1,18 +1,21 @@
 # Testing and Verification
 
+> **Scope note (October 2026):** Existing test reports describe the earlier **general evidence-first Kobald prototype**, not the proposed scientific harness. No reported test count should be interpreted as proof that scientific simulation, chemical analysis, instrument integration or automated laboratory work exists or is scientifically valid.
+
+
 Kobald's complete automated test suite is maintained with the private development codebase rather than in this public showcase repository.
 
 This page explains what the published test status means, what areas are covered and what evidence can be provided for technical review without exposing the full implementation.
 
 ## Current published status
 
-At the currently documented v0.9.0 release candidate, the private automated suite reports:
+For the historically documented v0.9.0 release candidate, the private automated suite reported:
 
 - **604 tests passing**
 - **1 skipped opt in live smoke test**
 - deterministic offline coverage for the core evidence and review workflow
 
-The public showcase does not claim that this test count proves production readiness. It is evidence that the current development foundation is being exercised systematically and that major project behaviour is not being assessed only through manual demonstrations.
+This is a historical milestone, not a fresh verification of the canonical KobaldAi repository. The public showcase does not claim that this test count proves production readiness. It is evidence that the current development foundation is being exercised systematically and that major project behaviour is not being assessed only through manual demonstrations.
 
 ## Areas covered by automated testing
 
